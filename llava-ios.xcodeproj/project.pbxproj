@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		640144EE2B6D9C3E004E9B6F /* llava_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640144ED2B6D9C3E004E9B6F /* llava_iosApp.swift */; };
+		640144F02B6D9C3E004E9B6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640144EF2B6D9C3E004E9B6F /* ContentView.swift */; };
+		640144F22B6D9C3F004E9B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 640144F12B6D9C3F004E9B6F /* Assets.xcassets */; };
+		640144F52B6D9C3F004E9B6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 640144F42B6D9C3F004E9B6F /* Preview Assets.xcassets */; };
+		640144FF2B6D9C3F004E9B6F /* llava_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640144FE2B6D9C3F004E9B6F /* llava_iosTests.swift */; };
+		640145092B6D9C3F004E9B6F /* llava_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640145082B6D9C3F004E9B6F /* llava_iosUITests.swift */; };
+		6401450B2B6D9C3F004E9B6F /* llava_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6401450A2B6D9C3F004E9B6F /* llava_iosUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		640144FB2B6D9C3F004E9B6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 640144E22B6D9C3E004E9B6F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 640144E92B6D9C3E004E9B6F;
+			remoteInfo = "llava-ios";
+		};
+		640145052B6D9C3F004E9B6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 640144E22B6D9C3E004E9B6F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 640144E92B6D9C3E004E9B6F;
+			remoteInfo = "llava-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		640144EA2B6D9C3E004E9B6F /* llava-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "llava-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		640144ED2B6D9C3E004E9B6F /* llava_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = llava_iosApp.swift; sourceTree = "<group>"; };
+		640144EF2B6D9C3E004E9B6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		640144F12B6D9C3F004E9B6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		640144F42B6D9C3F004E9B6F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		640144FA2B6D9C3F004E9B6F /* llava-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "llava-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		640144FE2B6D9C3F004E9B6F /* llava_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = llava_iosTests.swift; sourceTree = "<group>"; };
+		640145042B6D9C3F004E9B6F /* llava-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "llava-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		640145082B6D9C3F004E9B6F /* llava_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = llava_iosUITests.swift; sourceTree = "<group>"; };
+		6401450A2B6D9C3F004E9B6F /* llava_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = llava_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		640144E72B6D9C3E004E9B6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		640144F72B6D9C3F004E9B6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		640145012B6D9C3F004E9B6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		640144E12B6D9C3E004E9B6F = {
+			isa = PBXGroup;
+			children = (
+				640144EC2B6D9C3E004E9B6F /* llava-ios */,
+				640144FD2B6D9C3F004E9B6F /* llava-iosTests */,
+				640145072B6D9C3F004E9B6F /* llava-iosUITests */,
+				640144EB2B6D9C3E004E9B6F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		640144EB2B6D9C3E004E9B6F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				640144EA2B6D9C3E004E9B6F /* llava-ios.app */,
+				640144FA2B6D9C3F004E9B6F /* llava-iosTests.xctest */,
+				640145042B6D9C3F004E9B6F /* llava-iosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		640144EC2B6D9C3E004E9B6F /* llava-ios */ = {
+			isa = PBXGroup;
+			children = (
+				640144ED2B6D9C3E004E9B6F /* llava_iosApp.swift */,
+				640144EF2B6D9C3E004E9B6F /* ContentView.swift */,
+				640144F12B6D9C3F004E9B6F /* Assets.xcassets */,
+				640144F32B6D9C3F004E9B6F /* Preview Content */,
+			);
+			path = "llava-ios";
+			sourceTree = "<group>";
+		};
+		640144F32B6D9C3F004E9B6F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				640144F42B6D9C3F004E9B6F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		640144FD2B6D9C3F004E9B6F /* llava-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				640144FE2B6D9C3F004E9B6F /* llava_iosTests.swift */,
+			);
+			path = "llava-iosTests";
+			sourceTree = "<group>";
+		};
+		640145072B6D9C3F004E9B6F /* llava-iosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				640145082B6D9C3F004E9B6F /* llava_iosUITests.swift */,
+				6401450A2B6D9C3F004E9B6F /* llava_iosUITestsLaunchTests.swift */,
+			);
+			path = "llava-iosUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		640144E92B6D9C3E004E9B6F /* llava-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6401450E2B6D9C3F004E9B6F /* Build configuration list for PBXNativeTarget "llava-ios" */;
+			buildPhases = (
+				640144E62B6D9C3E004E9B6F /* Sources */,
+				640144E72B6D9C3E004E9B6F /* Frameworks */,
+				640144E82B6D9C3E004E9B6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "llava-ios";
+			productName = "llava-ios";
+			productReference = 640144EA2B6D9C3E004E9B6F /* llava-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		640144F92B6D9C3F004E9B6F /* llava-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 640145112B6D9C3F004E9B6F /* Build configuration list for PBXNativeTarget "llava-iosTests" */;
+			buildPhases = (
+				640144F62B6D9C3F004E9B6F /* Sources */,
+				640144F72B6D9C3F004E9B6F /* Frameworks */,
+				640144F82B6D9C3F004E9B6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				640144FC2B6D9C3F004E9B6F /* PBXTargetDependency */,
+			);
+			name = "llava-iosTests";
+			productName = "llava-iosTests";
+			productReference = 640144FA2B6D9C3F004E9B6F /* llava-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		640145032B6D9C3F004E9B6F /* llava-iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 640145142B6D9C3F004E9B6F /* Build configuration list for PBXNativeTarget "llava-iosUITests" */;
+			buildPhases = (
+				640145002B6D9C3F004E9B6F /* Sources */,
+				640145012B6D9C3F004E9B6F /* Frameworks */,
+				640145022B6D9C3F004E9B6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				640145062B6D9C3F004E9B6F /* PBXTargetDependency */,
+			);
+			name = "llava-iosUITests";
+			productName = "llava-iosUITests";
+			productReference = 640145042B6D9C3F004E9B6F /* llava-iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		640144E22B6D9C3E004E9B6F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					640144E92B6D9C3E004E9B6F = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					640144F92B6D9C3F004E9B6F = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 640144E92B6D9C3E004E9B6F;
+					};
+					640145032B6D9C3F004E9B6F = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 640144E92B6D9C3E004E9B6F;
+					};
+				};
+			};
+			buildConfigurationList = 640144E52B6D9C3E004E9B6F /* Build configuration list for PBXProject "llava-ios" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 640144E12B6D9C3E004E9B6F;
+			productRefGroup = 640144EB2B6D9C3E004E9B6F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				640144E92B6D9C3E004E9B6F /* llava-ios */,
+				640144F92B6D9C3F004E9B6F /* llava-iosTests */,
+				640145032B6D9C3F004E9B6F /* llava-iosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		640144E82B6D9C3E004E9B6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				640144F52B6D9C3F004E9B6F /* Preview Assets.xcassets in Resources */,
+				640144F22B6D9C3F004E9B6F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		640144F82B6D9C3F004E9B6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		640145022B6D9C3F004E9B6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		640144E62B6D9C3E004E9B6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				640144F02B6D9C3E004E9B6F /* ContentView.swift in Sources */,
+				640144EE2B6D9C3E004E9B6F /* llava_iosApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		640144F62B6D9C3F004E9B6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				640144FF2B6D9C3F004E9B6F /* llava_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		640145002B6D9C3F004E9B6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				640145092B6D9C3F004E9B6F /* llava_iosUITests.swift in Sources */,
+				6401450B2B6D9C3F004E9B6F /* llava_iosUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		640144FC2B6D9C3F004E9B6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 640144E92B6D9C3E004E9B6F /* llava-ios */;
+			targetProxy = 640144FB2B6D9C3F004E9B6F /* PBXContainerItemProxy */;
+		};
+		640145062B6D9C3F004E9B6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 640144E92B6D9C3E004E9B6F /* llava-ios */;
+			targetProxy = 640145052B6D9C3F004E9B6F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6401450C2B6D9C3F004E9B6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6401450D2B6D9C3F004E9B6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6401450F2B6D9C3F004E9B6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"llava-ios/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "world.prashanth.llava-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		640145102B6D9C3F004E9B6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"llava-ios/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "world.prashanth.llava-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		640145122B6D9C3F004E9B6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "world.prashanth.llava-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/llava-ios.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/llava-ios";
+			};
+			name = Debug;
+		};
+		640145132B6D9C3F004E9B6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "world.prashanth.llava-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/llava-ios.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/llava-ios";
+			};
+			name = Release;
+		};
+		640145152B6D9C3F004E9B6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "world.prashanth.llava-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "llava-ios";
+			};
+			name = Debug;
+		};
+		640145162B6D9C3F004E9B6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "world.prashanth.llava-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "llava-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		640144E52B6D9C3E004E9B6F /* Build configuration list for PBXProject "llava-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6401450C2B6D9C3F004E9B6F /* Debug */,
+				6401450D2B6D9C3F004E9B6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6401450E2B6D9C3F004E9B6F /* Build configuration list for PBXNativeTarget "llava-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6401450F2B6D9C3F004E9B6F /* Debug */,
+				640145102B6D9C3F004E9B6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		640145112B6D9C3F004E9B6F /* Build configuration list for PBXNativeTarget "llava-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				640145122B6D9C3F004E9B6F /* Debug */,
+				640145132B6D9C3F004E9B6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		640145142B6D9C3F004E9B6F /* Build configuration list for PBXNativeTarget "llava-iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				640145152B6D9C3F004E9B6F /* Debug */,
+				640145162B6D9C3F004E9B6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 640144E22B6D9C3E004E9B6F /* Project object */;
+}
