@@ -17,11 +17,20 @@
 		6437ED962B794E2000DC163F /* llama in Frameworks */ = {isa = PBXBuildFile; productRef = 6437ED952B794E2000DC163F /* llama */; };
 		6437ED9B2B794EAE00DC163F /* DownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6437ED9A2B794EAE00DC163F /* DownloadButton.swift */; };
 		6437EDA22B794FEC00DC163F /* AppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6437EDA02B794FEC00DC163F /* AppModel.xcdatamodeld */; };
+		6443C7B62BE3C4B800FD9693 /* sampling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6443C7B52BE3C4B800FD9693 /* sampling.cpp */; };
+		6443C7B82BE9B70000FD9693 /* SamplingWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6443C7B72BE9B70000FD9693 /* SamplingWrapper.mm */; };
+		645E6FE42B93808F00269118 /* ModelSelectScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E6FE32B93808F00269118 /* ModelSelectScreenView.swift */; };
+		645E6FE62B93819400269118 /* LlavaModelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E6FE52B93819400269118 /* LlavaModelInfo.swift */; };
+		645E6FE82BBCFE2600269118 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E6FE72BBCFE2600269118 /* CameraView.swift */; };
+		645E6FEA2BBCFE2C00269118 /* CameraDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E6FE92BBCFE2C00269118 /* CameraDataModel.swift */; };
+		645E6FEC2BBCFE3400269118 /* ViewfinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E6FEB2BBCFE3400269118 /* ViewfinderView.swift */; };
+		645E6FEE2BBCFE4400269118 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E6FED2BBCFE4400269118 /* Camera.swift */; };
 		648FBE0E2B7A5DB70069ED0E /* InferenceScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648FBE0D2B7A5DB70069ED0E /* InferenceScreenView.swift */; };
 		648FBE122B7C587E0069ED0E /* LlamaContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648FBE112B7C587E0069ED0E /* LlamaContext.swift */; };
 		648FBE142B7C5AF00069ED0E /* PicturePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648FBE132B7C5AF00069ED0E /* PicturePreview.swift */; };
 		648FBE182B7C61A40069ED0E /* llava.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 648FBE162B7C61A40069ED0E /* llava.cpp */; };
 		648FBE1B2B7C62010069ED0E /* clip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 648FBE192B7C62010069ED0E /* clip.cpp */; };
+		64A120852BD7E183002E1763 /* ThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A120842BD7E183002E1763 /* ThumbnailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +63,16 @@
 		6401450A2B6D9C3F004E9B6F /* llava_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = llava_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6437ED9A2B794EAE00DC163F /* DownloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadButton.swift; sourceTree = "<group>"; };
 		6437EDA12B794FEC00DC163F /* AppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppModel.xcdatamodel; sourceTree = "<group>"; };
+		6443C77D2BDC520500FD9693 /* sampling.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sampling.hpp; sourceTree = "<group>"; };
+		6443C7B52BE3C4B800FD9693 /* sampling.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sampling.cpp; sourceTree = "<group>"; };
+		6443C7B72BE9B70000FD9693 /* SamplingWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SamplingWrapper.mm; sourceTree = "<group>"; };
+		6443C7B92BE9B71800FD9693 /* SamplingWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SamplingWrapper.h; sourceTree = "<group>"; };
+		645E6FE32B93808F00269118 /* ModelSelectScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectScreenView.swift; sourceTree = "<group>"; };
+		645E6FE52B93819400269118 /* LlavaModelInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LlavaModelInfo.swift; sourceTree = "<group>"; };
+		645E6FE72BBCFE2600269118 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		645E6FE92BBCFE2C00269118 /* CameraDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraDataModel.swift; sourceTree = "<group>"; };
+		645E6FEB2BBCFE3400269118 /* ViewfinderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewfinderView.swift; sourceTree = "<group>"; };
+		645E6FED2BBCFE4400269118 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		648FBE0D2B7A5DB70069ED0E /* InferenceScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceScreenView.swift; sourceTree = "<group>"; };
 		648FBE112B7C587E0069ED0E /* LlamaContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LlamaContext.swift; sourceTree = "<group>"; };
 		648FBE132B7C5AF00069ED0E /* PicturePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturePreview.swift; sourceTree = "<group>"; };
@@ -64,6 +83,8 @@
 		648FBE1A2B7C62010069ED0E /* clip.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = clip.hpp; sourceTree = "<group>"; };
 		648FBE1C2B7C62710069ED0E /* stb_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
 		648FBE1D2B7C6D060069ED0E /* llava-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "llava-ios.entitlements"; sourceTree = "<group>"; };
+		64A120832BD75CD5002E1763 /* log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
+		64A120842BD7E183002E1763 /* ThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				6437ED9A2B794EAE00DC163F /* DownloadButton.swift */,
+				645E6FE32B93808F00269118 /* ModelSelectScreenView.swift */,
 			);
 			path = ModelSelectScreen;
 			sourceTree = "<group>";
@@ -181,6 +203,7 @@
 		6437ED9C2B794ED300DC163F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				645E6FE52B93819400269118 /* LlavaModelInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,8 +211,13 @@
 		648FBE0F2B7C56820069ED0E /* InferenceScreen */ = {
 			isa = PBXGroup;
 			children = (
+				645E6FED2BBCFE4400269118 /* Camera.swift */,
+				645E6FE92BBCFE2C00269118 /* CameraDataModel.swift */,
+				645E6FE72BBCFE2600269118 /* CameraView.swift */,
+				645E6FEB2BBCFE3400269118 /* ViewfinderView.swift */,
 				648FBE0D2B7A5DB70069ED0E /* InferenceScreenView.swift */,
 				648FBE132B7C5AF00069ED0E /* PicturePreview.swift */,
+				64A120842BD7E183002E1763 /* ThumbnailView.swift */,
 			);
 			path = InferenceScreen;
 			sourceTree = "<group>";
@@ -204,6 +232,11 @@
 				648FBE192B7C62010069ED0E /* clip.cpp */,
 				648FBE1A2B7C62010069ED0E /* clip.hpp */,
 				648FBE1C2B7C62710069ED0E /* stb_image.h */,
+				64A120832BD75CD5002E1763 /* log.h */,
+				6443C77D2BDC520500FD9693 /* sampling.hpp */,
+				6443C7B52BE3C4B800FD9693 /* sampling.cpp */,
+				6443C7B72BE9B70000FD9693 /* SamplingWrapper.mm */,
+				6443C7B92BE9B71800FD9693 /* SamplingWrapper.h */,
 			);
 			path = Llava;
 			sourceTree = "<group>";
@@ -345,15 +378,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6443C7B82BE9B70000FD9693 /* SamplingWrapper.mm in Sources */,
 				648FBE142B7C5AF00069ED0E /* PicturePreview.swift in Sources */,
 				640144F02B6D9C3E004E9B6F /* ContentView.swift in Sources */,
 				648FBE1B2B7C62010069ED0E /* clip.cpp in Sources */,
+				645E6FE82BBCFE2600269118 /* CameraView.swift in Sources */,
 				648FBE182B7C61A40069ED0E /* llava.cpp in Sources */,
+				645E6FE62B93819400269118 /* LlavaModelInfo.swift in Sources */,
+				6443C7B62BE3C4B800FD9693 /* sampling.cpp in Sources */,
+				645E6FEA2BBCFE2C00269118 /* CameraDataModel.swift in Sources */,
 				648FBE122B7C587E0069ED0E /* LlamaContext.swift in Sources */,
 				6437ED9B2B794EAE00DC163F /* DownloadButton.swift in Sources */,
+				645E6FE42B93808F00269118 /* ModelSelectScreenView.swift in Sources */,
 				648FBE0E2B7A5DB70069ED0E /* InferenceScreenView.swift in Sources */,
+				645E6FEE2BBCFE4400269118 /* Camera.swift in Sources */,
 				640144EE2B6D9C3E004E9B6F /* llava_iosApp.swift in Sources */,
+				64A120852BD7E183002E1763 /* ThumbnailView.swift in Sources */,
 				6437EDA22B794FEC00DC163F /* AppModel.xcdatamodeld in Sources */,
+				645E6FEC2BBCFE3400269118 /* ViewfinderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +564,8 @@
 				DEVELOPMENT_TEAM = H7MKZB4TCD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "For multi-modal AI use cases";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -555,6 +599,8 @@
 				DEVELOPMENT_TEAM = H7MKZB4TCD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "For multi-modal AI use cases";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -692,7 +738,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ggerganov/llama.cpp";
 			requirement = {
-				branch = main;
+				branch = master;
 				kind = branch;
 			};
 		};

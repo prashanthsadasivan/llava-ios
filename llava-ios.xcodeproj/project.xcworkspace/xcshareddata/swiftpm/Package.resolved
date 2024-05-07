@@ -1,20 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "ggml",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ggerganov/ggml.git",
-      "state" : {
-        "branch" : "release",
-        "revision" : "82248c97c8639f826f18e1949d88bfbc8c516a3d"
-      }
-    },
-    {
       "identity" : "llama.cpp",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ggerganov/llama.cpp",
       "state" : {
-        "revision" : "e4640d8fdf56f14a6db3d092bcd3d2d315cb5d04"
+        "branch" : "master",
+        "revision" : "4e96a812b3ce7322a29a3008db2ed73d9087b176"
       }
     }
   ],

@@ -21,6 +21,11 @@ func llama_batch_add(_ batch: inout llama_batch, _ id: llama_token, _ pos: llama
     batch.n_tokens += 1
 }
 
+struct LlamaParams {
+    var nPredict: Int = 256
+    var nBatch: Int = 2048
+}
+
 actor LlamaContext {
     private var model: OpaquePointer
     private var context: OpaquePointer
@@ -29,11 +34,14 @@ actor LlamaContext {
     private var clip_ctx: OpaquePointer?
     private var systemPrompt: String
     private var userPromptPostfix: String
+    private var sampling_ctx: SamplingWrapper
+    private var n_past: Int32 = 0
+    private var needsSystemInit = true
 
     /// This variable is used to store temporarily invalid cchars
     private var temporary_invalid_cchars: [CChar]
 
-    var n_len: Int32 = 64
+    var n_len: Int32 = 2048
     var n_cur: Int32 = 0
 
     var n_decode: Int32 = 0
@@ -47,6 +55,8 @@ actor LlamaContext {
         self.temporary_invalid_cchars = []
         self.systemPrompt = systemPrompt
         self.userPromptPostfix = userPromptPostfix
+        self.sampling_ctx = SamplingWrapper(llamaCtx: context)
+        
     }
 
     deinit {
@@ -55,12 +65,13 @@ actor LlamaContext {
         }
         llama_batch_free(batch)
         llama_free(context)
+//        self.sampling_ctx.freeSamplingContext()
         llama_free_model(model)
         llama_backend_free()
     }
 
     static func create_context(path: String, clipPath: String?, systemPrompt: String, userPromptPostfix: String) throws -> LlamaContext {
-        llama_backend_init(false)
+        llama_backend_init()
         var model_params = llama_model_default_params()
 
 #if targetEnvironment(simulator)
@@ -86,6 +97,7 @@ actor LlamaContext {
         ctx_params.n_threads_batch = UInt32(n_threads)
 
         let context = llama_new_context_with_model(model, ctx_params)
+        
         guard let context else {
             print("Could not load context!")
             throw LlamaError.couldNotInitializeContext
@@ -119,123 +131,36 @@ actor LlamaContext {
         return batch.n_tokens;
     }
     
-    func completion_init_system(text: String) {
-        
-        tokens_list = tokenize(text: text, add_bos: false)
-        temporary_invalid_cchars = []
-
-        let n_ctx = llama_n_ctx(context)
-        let n_kv_req = tokens_list.count + (Int(n_len) - tokens_list.count)
-
-        print("\n n_len = \(n_len), n_ctx = \(n_ctx), n_kv_req = \(n_kv_req)")
-
-        if n_kv_req > n_ctx {
-            print("error: n_kv_req > n_ctx, the required KV cache size is not big enough")
-        }
-
-        for id in tokens_list {
-            print(String(cString: token_to_piece(token: id) + [0]))
-        }
-
-        llama_batch_clear(&batch)
-
-        for i1 in 0..<tokens_list.count {
-            let i = Int(i1)
-            llama_batch_add(&batch, tokens_list[i], Int32(i), [0], false)
-        }
-        batch.logits[Int(batch.n_tokens) - 1] = 1 // true
-
-        if llama_decode(context, batch) != 0 {
-            print("llama_decode() failed")
-        }
+    func completion_system_init() {
+        sampling_ctx.evaluateString(self.systemPrompt, batchSize: 2048, addBos: true)
+        needsSystemInit = false
     }
-
+   
     func completion_init(text: String, imageBytes: [UInt8]?) {
         print("attempting to complete \"\(text)\"")
-        
-        if imageBytes == nil {
-            // tinychat
-            completion_init_system(text: "\(systemPrompt)\(text)\(userPromptPostfix)")
-            return
-        } else {
-            completion_init_system(text: systemPrompt)
+        if needsSystemInit {
+            completion_system_init()
         }
-
-        let embed = imageBytes!.withUnsafeBytes{ body in
-            llava_image_embed_make_with_bytes(clip_ctx, 2, body.baseAddress, Int32(body.count))
+        if imageBytes != nil {
+            var myBytes = imageBytes!;
+            let size = Int32(myBytes.count)
+            let success = myBytes.withUnsafeMutableBytes {raw in
+                self.sampling_ctx.embedImage(raw.baseAddress, withSize: size, clipContext: clip_ctx)
+            }
+            
+            print("prashanth: \(success)")
+  
         }
-        let n_image_pos = Int(embed!.pointee.n_image_pos)
-        let n_batch = 512 // i think...
-        var n_past = Int32(0)
-        let didWork = withUnsafeMutablePointer(to: &n_past, { p in
-            return llava_eval_image_embed(self.context, embed, Int32(n_batch), p)
-        })
-        
-        if didWork == false {
-            print("FAILED TO EMBED IMAGE")
-            return
-        }
-        
-        completion_init_system(text: "\(text)\(userPromptPostfix)")
-        n_cur = batch.n_tokens
+        self.sampling_ctx.evaluateString("\(text)\(userPromptPostfix)", batchSize: 2048, addBos: false)
     }
 
     func completion_loop() -> String {
-        var new_token_id: llama_token = 0
+        needsSystemInit = true
+        let ret = self.sampling_ctx.sampleAndEvaluate()!
+        print(ret)
+        n_cur += 1
+        return ret
 
-        let n_vocab = llama_n_vocab(model)
-        let logits = llama_get_logits_ith(context, batch.n_tokens - 1)
-
-        var candidates = Array<llama_token_data>()
-        candidates.reserveCapacity(Int(n_vocab))
-
-        for token_id in 0..<n_vocab {
-            candidates.append(llama_token_data(id: token_id, logit: logits![Int(token_id)], p: 0.0))
-        }
-        candidates.withUnsafeMutableBufferPointer() { buffer in
-            var candidates_p = llama_token_data_array(data: buffer.baseAddress, size: buffer.count, sorted: false)
-
-//            let ctx_sampling = llama_sampling_init(params->sparams);
-
-//            llama_sampling_samp
-            new_token_id = llama_sample_token_greedy(context, &candidates_p)
-        }
-
-        if new_token_id == llama_token_eos(model) || n_cur == n_len {
-            print("\n")
-            let new_token_str = String(cString: temporary_invalid_cchars + [0])
-            temporary_invalid_cchars.removeAll()
-            return new_token_str
-        }
-
-        let new_token_cchars = token_to_piece(token: new_token_id)
-        temporary_invalid_cchars.append(contentsOf: new_token_cchars)
-        let new_token_str: String
-        if let string = String(validatingUTF8: temporary_invalid_cchars + [0]) {
-            temporary_invalid_cchars.removeAll()
-            new_token_str = string
-        } else if (0 ..< temporary_invalid_cchars.count).contains(where: {$0 != 0 && String(validatingUTF8: Array(temporary_invalid_cchars.suffix($0)) + [0]) != nil}) {
-            // in this case, at least the suffix of the temporary_invalid_cchars can be interpreted as UTF8 string
-            let string = String(cString: temporary_invalid_cchars + [0])
-            temporary_invalid_cchars.removeAll()
-            new_token_str = string
-        } else {
-            new_token_str = ""
-        }
-        print(new_token_str)
-        // tokens_list.append(new_token_id)
-
-        llama_batch_clear(&batch)
-        llama_batch_add(&batch, new_token_id, n_cur, [0], true)
-
-        n_decode += 1
-        n_cur    += 1
-
-        if llama_decode(context, batch) != 0 {
-            print("failed to evaluate llama!")
-        }
-
-        return new_token_str
     }
 
     func bench(pp: Int, tg: Int, pl: Int, nr: Int = 1) -> String {
@@ -338,45 +263,6 @@ actor LlamaContext {
         tokens_list.removeAll()
         temporary_invalid_cchars.removeAll()
         llama_kv_cache_clear(context)
-    }
-
-    private func tokenize(text: String, add_bos: Bool) -> [llama_token] {
-        let utf8Count = text.utf8.count
-        let n_tokens = utf8Count + (add_bos ? 1 : 0) + 1
-        let tokens = UnsafeMutablePointer<llama_token>.allocate(capacity: n_tokens)
-        let tokenCount = llama_tokenize(model, text, Int32(utf8Count), tokens, Int32(n_tokens), add_bos, false)
-
-        var swiftTokens: [llama_token] = []
-        for i in 0..<tokenCount {
-            swiftTokens.append(tokens[Int(i)])
-        }
-
-        tokens.deallocate()
-
-        return swiftTokens
-    }
-
-    /// - note: The result does not contain null-terminator
-    private func token_to_piece(token: llama_token) -> [CChar] {
-        let result = UnsafeMutablePointer<Int8>.allocate(capacity: 8)
-        result.initialize(repeating: Int8(0), count: 8)
-        defer {
-            result.deallocate()
-        }
-        let nTokens = llama_token_to_piece(model, token, result, 8)
-
-        if nTokens < 0 {
-            let newResult = UnsafeMutablePointer<Int8>.allocate(capacity: Int(-nTokens))
-            newResult.initialize(repeating: Int8(0), count: Int(-nTokens))
-            defer {
-                newResult.deallocate()
-            }
-            let nNewTokens = llama_token_to_piece(model, token, newResult, -nTokens)
-            let bufferPointer = UnsafeBufferPointer(start: newResult, count: Int(nNewTokens))
-            return Array(bufferPointer)
-        } else {
-            let bufferPointer = UnsafeBufferPointer(start: result, count: Int(nTokens))
-            return Array(bufferPointer)
-        }
+        sampling_ctx.resetSamplingContext()
     }
 }
